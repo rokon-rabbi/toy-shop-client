@@ -11,10 +11,10 @@ import {
 import { useEffect } from "react";
 import { useState } from "react";
 import app from "../firebase/firebase.config";
-import { signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
-const githubProvider = new GithubAuthProvider();
+
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
@@ -33,10 +33,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
-  const signInWithGithub = () => {
-    setLoading(true);
-    return signInWithPopup(auth, githubProvider);
-  };
+ 
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -71,7 +68,6 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     signInWithGoogle,
-    signInWithGithub,
     updateUser,
   };
 

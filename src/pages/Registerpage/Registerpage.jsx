@@ -13,7 +13,7 @@ const Registerpage = () => {
     const form = event.target;
     const name = form.name.value;
     const photo = form.photo.value;
-    const email = form.email.value;x
+    const email = form.email.value;
     const password = form.password.value;
 
     setError("");
