@@ -27,13 +27,13 @@ const Header = () => {
       <nav className="md:flex bg-cyan-50 sticky z-50 top-0  p-6 md:px-20 md:justify-between   items-center ">
         {icon ? (
           <FontAwesomeIcon
-            className="text-3xl  md:hidden inline  relative top-11 justify-start "
+            className="text-3xl  md:hidden inline cursor-pointer relative top-8 justify-start "
             onClick={() => setIcon(!icon)}
             icon={faBars}
           />
         ) : (
           <FontAwesomeIcon
-            className="text-4xl  md:hidden inline  relative top-11 justify-start "
+            className="text-4xl  md:hidden inline  relative top-8 cursor-pointer justify-start "
             onClick={() => setIcon(!icon)}
             icon={faXmark}
           />
@@ -53,7 +53,7 @@ const Header = () => {
         </Link>
         <ul
           className={`bg-white md:bg-cyan-50 shadow-2xl md:shadow-none md:mr-72 md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-md  absolute  md:bg-none text-slate-950 duration-300 ${
-            !icon ? "left-0 p-2" : "-left-40 "
+            !icon ? "left-0 p-2 mt-2" : "-left-40 "
           } `}
         >
           <li>
@@ -104,7 +104,7 @@ const Header = () => {
             {/* button  */}
             <button
               onClick={handleLogOut}
-              className="hidden md:block text-slate-600  hover:text-sky-600 font-bold md:text-lg  "
+              className="hidden md:block text-slate-600  border-sky-500 px-4 hover:bg-white py-1 border-2 rounded-full hover:text-sky-600 font-bold md:text-lg  "
             >
               logout
               <FaSignInAlt className="inline ml-1 mb-1 font-bold" />
@@ -112,7 +112,7 @@ const Header = () => {
           </div>
         ) : (
           <Link to={"/login"}>
-            <button className="hidden md:block  text-slate-600  hover:text-sky-600 font-bold md:text-lg ">
+            <button className="hidden md:block  text-slate-600 border-sky-500 px-4 hover:bg-white py-1 border-2 rounded-full hover:text-sky-600 font-bold md:text-lg ">
               <FaSignInAlt className="inline mr-1 mb-1 font-bold" />
               login
             </button>
@@ -141,11 +141,11 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <Link to={"/login"}>
-              <button className=" left-72  text-slate-600  hover:text-sky-600   ml-auto relative md:w-100 w-20 bottom-6 font-medium text-sm md:md:text-lg   p-1 ">
+            <Link to={"/login"} className="left-10  text-slate-600  hover:text-sky-600  border-sky-500 px-auto hover:bg-white py-auto border-2 rounded-full  ml-auto relative md:w-100 w-20 bottom-6 font-medium text-sm md:md:text-lg   p-1" >
+             
                 <FaSignInAlt className="inline mr-1 font-bold" />
                 login
-              </button>
+              
             </Link>
           )}
         </div>
