@@ -68,7 +68,7 @@ const user=true;
           </li>
           <li>
             <NavLink
-              to="/blog"
+              to="/alltoys"
               aria-label="Blog"
               title="Blog"
               className={({ isActive }) => (isActive ? "active" : "default")}
@@ -78,7 +78,7 @@ const user=true;
           </li>
           <li>
             <NavLink
-              to="/blog"
+              to="/blogs"
               aria-label="Blog"
               title="Blog"
               className={({ isActive }) => (isActive ? "active" : "default")}
