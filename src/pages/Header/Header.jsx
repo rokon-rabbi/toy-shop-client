@@ -20,7 +20,7 @@ const Header = () => {
   //   console.log(user);
   // }
   // console.log(user);
-const user=true;
+const user=false;
   const handleLogOut = () => {
     // logOut()
     //   .then()
