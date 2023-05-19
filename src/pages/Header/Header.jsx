@@ -24,7 +24,7 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="md:flex  p-6 md:px-20 md:justify-between   items-center ">
+      <nav className="md:flex bg-cyan-50 sticky z-50 top-0  p-6 md:px-20 md:justify-between   items-center ">
         {icon ? (
           <FontAwesomeIcon
             className="text-3xl  md:hidden inline  relative top-11 justify-start "
@@ -52,7 +52,7 @@ const Header = () => {
           />
         </Link>
         <ul
-          className={`bg-white shadow-2xl md:shadow-none md:mr-72 md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-md  absolute  md:bg-none text-slate-950 duration-300 ${
+          className={`bg-white md:bg-cyan-50 shadow-2xl md:shadow-none md:mr-72 md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-md  absolute  md:bg-none text-slate-950 duration-300 ${
             !icon ? "left-0 p-2" : "-left-40 "
           } `}
         >
