@@ -1,15 +1,17 @@
-
-import './App.css'
+import { Outlet } from "react-router-dom";
+import Header from "./pages/Header/Header";
+import Footer from "./pages/Footer/Footer";
 
 function App() {
- 
-
   return (
-    <div className='m-20'>
-      <h1 className='text-6xl text-center my-20 text-purple-600'>Hot Hot Cold Coffee: {50}</h1>
-     
+    <div className=" bg-white">
+      <Header />
+      <div className="md:min-h-[calc(100vh-160px)]">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
