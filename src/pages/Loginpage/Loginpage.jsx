@@ -45,10 +45,10 @@ const Loginpage = () => {
   return (
        <div className=" bg-sky-200 relative">
       <div
-        className="absolute inset-0  bg-cover bg-center"
+        className="absolute inset-0  bg-contain bg-center"
         style={{
-          backgroundImage: `url("https://static.vecteezy.com/system/resources/previews/007/164/537/original/fingerprint-identity-sensor-data-protection-system-podium-hologram-blue-light-and-concept-free-vector.jpg")`,
-          opacity: "0.9",
+          backgroundImage: `url("https://img.freepik.com/premium-photo/wooden-transportation-toys-blue-background-car-toys-background_423236-198.jpg")`,
+          opacity: "0.2",
         }}
       ></div>
       <div className="flex relative flex-col p-6 items-center justify-center h-full ">
