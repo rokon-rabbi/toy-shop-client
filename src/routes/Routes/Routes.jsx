@@ -19,13 +19,15 @@ const router = createBrowserRouter([
     children: [
       
       { path: "/", element: <Home/>  },
-      { path: "/alltoys", element: <Alltoys/>  },
+      { path: "/alltoys", element: <Alltoys/>,
+      loader: () => fetch('https://toy-marketplace.vercel.app/Disneyalltoys')
+    },
       { path: "/blogs", element: <Blogs/>  },
       { path: "/login", element: <Loginpage/> },
       { path: "/register", element: <Registerpage/>},
       { path: "/addtoy", element: <Addtoy/>  },
       { path: "/view-details/:id", element: <Details/>,
-      loader: ({params}) => fetch(`http://localhost:3000/DisneyToys/${params.id}`) 
+      loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys/${params.id}`) 
       
     },
       

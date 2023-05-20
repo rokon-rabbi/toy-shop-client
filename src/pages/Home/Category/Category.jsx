@@ -19,7 +19,7 @@ const Category = () => {
   const [toys, setToys] = useState([]);
   const [activeTab, setActiveTab] = useState("Disney Princess");
   useEffect(() => {
-    const url = `http://localhost:3000/DisneyToys?subCategory=${activeTab}`;
+    const url = `https://toy-marketplace.vercel.app/DisneyToys?subCategory=${activeTab}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setToys(data));
@@ -29,7 +29,7 @@ const Category = () => {
     setActiveTab(category);
 
     // Update the URL and fetch data
-    const url = `http://localhost:3000/DisneyToys?subCategory=${category}`;
+    const url = `https://toy-marketplace.vercel.app/DisneyToys?subCategory=${category}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setToys(data));
