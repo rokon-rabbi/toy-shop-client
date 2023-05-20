@@ -104,9 +104,9 @@ const Addtoy = () => {
             onChange={(e) => setSubCategory(e.target.value)}
             required
           >
-            <option value="Math Toys">Math Toys</option>
-            <option value="Language Toys">Language Toys</option>
-            <option value="Science Toys">Science Toys</option>
+            <option value="Math Toys">Animation Characters</option>
+            <option value="Language Toys">Frozen Dolls</option>
+            <option value="Science Toys">Disney Princess</option>
           </select>
         </div>
         <div className="mb-4">

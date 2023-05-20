@@ -83,14 +83,14 @@ playsets, bubble wands & more
         <SwiperSlide>
           <img
             className="relative rounded"
-            src="https://cdn-ssl.s7.disneystore.com/is/image/ShopDisney/mb_april-toys-cars_20230410_2x?fit=constrain&cropN=0,0,1,1&fmt=webp&qlt=70&wid=1200"
+            src="https://cdn-ssl.s7.disneystore.com/is/image/ShopDisney/mb_disney-princess_20230419?fit=constrain&cropN=0,0,1,1&fmt=webp&qlt=70&wid=1200"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
           <p className="absolute inset-1 text-white font-bold  z-20 md:ml-56 md:mt-64 text-xs m-12 md:text-4xl">
-          Cars, Trains & RC Toys
+          Disney Princess
           </p>
           <p className="absolute inset-1 text-white f  z-20 md:ml-56 md:mt-80 m-20 text-xs md:text-xl">
-          Zoom right into your latest adventure.
+          Express yourself with toys, clothing, and more inspired by your favorite Disney Princesses
          
           </p>
           <button className="absolute top-96 left-56  z-20 border border-dotted rounded-full py-2 px-4 text-white bg-blue-500 hover:bg-blue-600">

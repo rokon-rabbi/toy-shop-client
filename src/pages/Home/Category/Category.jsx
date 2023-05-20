@@ -48,7 +48,7 @@ const Category = () => {
 
           <TabPanel className="responsive-tab-panel">
             <div className="p-4 bg-light">
-              <h2 className="mb-4">Any Content 1</h2>
+              <h2 className="mb-4">Products</h2>
               <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 {toys.map((toy) => (
                   <div key={toy._id} className="col mb-4">
