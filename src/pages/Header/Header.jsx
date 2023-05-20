@@ -86,6 +86,16 @@ const Header = () => {
               Blog
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/addtoy"
+              aria-label="Addtoy"
+              title="Addtoy"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              Add a Toy
+            </NavLink>
+          </li>
         </ul>
 
         {/* <p>{user.displayName}</p> */}

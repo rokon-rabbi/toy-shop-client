@@ -5,7 +5,7 @@ import capture4 from "../../../assets/3capture.png";
 const Gallery = () => {
   return (
     <section className="p-20">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-20">
         {/* Card 1 */}
         <div className="bg-white rounded-lg ">
           <img
