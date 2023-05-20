@@ -1,135 +1,208 @@
-
-import {  FaRegStar, FaStar  } from 'react-icons/fa';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import {  useEffect, useState } from 'react';
-import Rating from 'react-rating';
-import { Link } from 'react-router-dom';
+import { FaRegStar, FaStar } from "react-icons/fa";
+// import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { useEffect, useState } from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import Rating from "react-rating";
+// import { Link } from "react-router-dom";
+// import Swal from "sweetalert2";
 const Category = () => {
-   
-    const [toys, setToys] = useState([]);
-    const [activeTab, setActiveTab] = useState('Marvel');
-    useEffect(() => {
-        // Fetch initial data for the default category (Marvel)
-        const url = `https://toy-stars-server.vercel.app/toys?category=${activeTab}`;
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => setToys(data));
-         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);  
+  const [openTab, setOpenTab] = useState(1);
+  const [toys, setToys] = useState([]);
+  const [activeTab, setActiveTab] = useState("Disney Princess");
+  useEffect(() => {
+    const url = `http://localhost:3000/DisneyToys?subCategory=${activeTab}`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setToys(data));
+  }, []);
 
-    const handleTabClick = (category) => {
-        setActiveTab(category);
-    
-        // Update the URL and fetch data based on the selected category
-        const url = `https://toy-stars-server.vercel.app/toys?category=${category}`;
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => setToys(data));
-      };
-    
-    return (
-        <div className="container mb-5 mt-5">
-        <h2 className='text-center mb-3 p-4 underline'>Products By Category</h2>
-        <Tabs className="responsive-tabs">
-          <TabList className="nav nav-pills nav-justified mb-3 bg-light rounded flex-column flex-md-row">
-            <Tab className={`nav-item ${activeTab === 'Disney Princess' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Disney Princess')} style={{ cursor: 'pointer' }}>
-              <span className="nav-link text-dark fw-bold">| Disney Princess |</span>
-            </Tab>
-            <Tab className={`nav-item ${activeTab === 'Frozen Dolls' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Frozen Dolls')} style={{ cursor: 'pointer' }}>
-              <span className="nav-link text-dark fw-bold">| Frozen Dolls |</span>
-            </Tab>
-            <Tab className={`nav-item ${activeTab === 'Animation Characters' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Animation Characters')} style={{ cursor: 'pointer' }}>
-              <span className="nav-link text-dark fw-bold">| Animation Characters |</span>
-            </Tab>
-          </TabList>
+  const handleTabClick = category => {
+    setActiveTab(category);
 
-          <TabPanel className="responsive-tab-panel">
-            <div className="p-4 bg-light">
-              <h2 className="mb-4">Products</h2>
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                {toys.map((toy) => (
-                  <div key={toy._id} className="col mb-4">
-                    <div className="card shadow">
-                      <img src={toy.toyPhotoURL} className="card-img-top img-fluid" alt="Product Image" style={{ objectFit: "contain", height: "250px" }} />
-                      <div className="card-body">
-                        <h5 className="card-title">{toy.toyName}</h5>
-                        <p className="card-text">Price: ${toy.price}</p>
-                        <p className="card-text">Rating: <Rating
+    // Update the URL and fetch data
+    const url = `http://localhost:3000/DisneyToys?subCategory=${category}`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setToys(data));
+  };
+
+  //   const handleViewDetails = () => {
+  //     if (!user) {
+  //       Swal.fire({
+  //         title: "Please log in",
+  //         text: "You need to be logged in to view the details.",
+  //         icon: "warning",
+  //         showCancelButton: false,
+  //         confirmButtonText: "OK",
+  //       });
+  //     } else {
+  //       // User is present, do nothing or perform desired actions
+  //     }
+  //   };
+  return (
+    <div className="p-20 mx-auto mb-5 mt-5">
+      <p className="md:text-5xl mb-5 text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
+      Products By Category
+      </p>
+      <div className="flex flex-wrap">
+        <div className="w-full">
+          <ul
+            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+            role="tablist"
+          >
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  (openTab === 1
+                    ? "text-white bg-pink-600"
+                    : "text-pink-600 bg-white")
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  handleTabClick("Disney Princess");
+                  setOpenTab(1);
+                }}
+                data-toggle="tab"
+                href="#link1"
+                role="tablist"
+              >
+                Disney Princess
+              </a>
+            </li>
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  (openTab === 2
+                    ? "text-white bg-pink-600"
+                    : "text-pink-600 bg-white")
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  handleTabClick("Frozen Dolls");
+                  setOpenTab(2);
+                }}
+                data-toggle="tab"
+                href="#link2"
+                role="tablist"
+              >
+                Frozen Dolls
+              </a>
+            </li>
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a
+                className={
+                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  (openTab === 3
+                    ? "text-white bg-pink-600"
+                    : "text-pink-600 bg-white")
+                }
+                onClick={e => {
+                  e.preventDefault();
+                  handleTabClick("Animation Characters");
+                  setOpenTab(3);
+                }}
+                data-toggle="tab"
+                href="#link3"
+                role="tablist"
+              >
+                Animation Characters
+              </a>
+            </li>
+          </ul>
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+            <div className="px-4 py-5 flex-auto">
+              <div className="tab-content tab-space">
+                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                  <div className="grid grid-cols-3 gap-10 px-10">
+                    {toys.map(toy => (
+                      <Card key={toy._id} className="w-auto ">
+                        <CardHeader
+                          shadow={false}
+                          floated={false}
+                          className="h-72 "
+                        >
+                          <img
+                            src={toy.pictureURL}
+                            className="w-full h-full object-cover"
+                          />
+                        </CardHeader>
+                        <CardBody>
+                          <div className="flex items-center justify-between mb-2">
+                            <Typography
+                              color="blue-gray"
+                              className="font-medium h-5 overflow-hidden "
+                            >
+                              {toy.name}
+                            </Typography>
+                            <Typography
+                              color="blue-gray"
+                              className="font-medium bg-slate-200 rounded"
+                            >
+                              ${toy.price}
+                            </Typography>
+                          </div>
+                          <p className="card-text">
+                            Rating:{" "}
+                            <Rating
                               placeholderRating={toy.rating}
                               readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-                              fullSymbol={<FaStar></FaStar>}>
-                              
-                            </Rating> ({ (toy.rating)})</p>
-                            <Link to={`/view-details/${toy._id}`}><button onClick={() => handleViewDetails(toy._id)} className="btn btn-warning">View Details</button></Link>
-                      </div>
-                    </div>
+                              emptySymbol={<FaRegStar></FaRegStar>}
+                              placeholderSymbol={
+                                <FaStar className="text-warning"></FaStar>
+                              }
+                              fullSymbol={<FaStar></FaStar>}
+                            ></Rating>{" "}
+                            ({toy.rating})
+                          </p>
+                        </CardBody>
+
+                        <Button
+                          ripple={false}
+                          fullWidth={true}
+                          className="bg-blue-gray-900/10 bg-pink-500 hover:bg-pink-600 text-white shadow-none hover:shadow-none hover:scale-105 focus:shadow-none focus:scale-105 active:scale-100"
+                        >
+                          View Details
+                        </Button>
+                      </Card>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                  <p>
+                    Completely synergize resource taxing relationships via
+                    premier niche markets. Professionally cultivate one-to-one
+                    customer service with robust ideas.
+                    <br />
+                    <br />
+                    Dynamically innovate resource-leveling customer service for
+                    state of the art customer service.
+                  </p>
+                </div>
+                <div className={openTab === 3 ? "block" : "hidden"} id="link3">
+                  <p>
+                    Efficiently unleash cross-media information without
+                    cross-media value. Quickly maximize timely deliverables for
+                    real-time schemas.
+                    <br />
+                    <br /> Dramatically maintain clicks-and-mortar solutions
+                    without functional solutions.
+                  </p>
+                </div>
               </div>
             </div>
-          </TabPanel>
-          <TabPanel className="responsive-tab-panel">
-          <div className="p-4 bg-light">
-              <h2 className="mb-4">Any Content 1</h2>
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                {toys.map((toy) => (
-                  <div key={toy._id} className="col mb-4">
-                    <div className="card shadow">
-                      <img src={toy.toyPhotoURL} className="card-img-top img-fluid" alt="Product Image" style={{ objectFit: "contain", height: "250px" }} />
-                      <div className="card-body">
-                        <h5 className="card-title">{toy.toyName}</h5>
-                        <p className="card-text">Price: ${toy.price}</p>
-                        <p className="card-text">Rating: <Rating
-                              placeholderRating={toy.rating}
-                              readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-                              fullSymbol={<FaStar></FaStar>}>
-                              
-                            </Rating> ({ (toy.rating)})</p>
-                            <Link to={`/view-details/${toy._id}`}><button className="btn btn-warning">View Details</button></Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </TabPanel>
-          <TabPanel className="responsive-tab-panel">
-          <div className="p-4 bg-light">
-              <h2 className="mb-4">Any Content 1</h2>
-              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                {toys.map((toy) => (
-                  <div key={toy._id} className="col mb-4">
-                    <div className="card shadow">
-                      <img src={toy.toyPhotoURL} className="card-img-top img-fluid" alt="Product Image" style={{ objectFit: "contain", height: "250px" }} />
-                      <div className="card-body">
-                        <h5 className="card-title">{toy.toyName}</h5>
-                        <p className="card-text">Price: ${toy.price}</p>
-                        <p className="card-text">Rating: <Rating
-                              placeholderRating={toy.rating}
-                              readonly
-                            emptySymbol={<FaRegStar></FaRegStar>}
-                            placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-                              fullSymbol={<FaStar></FaStar>}>
-                              
-                            </Rating> ({ (toy.rating)})</p>
-                            <Link to={`/view-details/${toy._id}`}><button className="btn btn-warning">View Details</button></Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </TabPanel>
-        </Tabs>
+          </div>
+        </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Category;
