@@ -6,7 +6,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 const PrivateRoute = ({children}) => {
     const {user, loading} = useContext(AuthContext);
     const location = useLocation();
-    console.log('user in private route', user);
+    console.log('user in private route', children);
     if(loading){
         return(<div role="status">
         <svg aria-hidden="true" className="w-8  h-20 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -36,7 +36,7 @@ const Category = () => {
   };
 
   const handleViewDetails = () => {
-    if (user) {
+    if (!user) {
       Swal.fire({
         title: "Please log in",
         text: "You need to be logged in to view the details.",

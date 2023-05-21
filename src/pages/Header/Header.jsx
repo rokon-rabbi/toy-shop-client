@@ -104,7 +104,7 @@ const Header = () => {
             <div className="hidden md:block">
               <div className="  hover:cursor-pointer rounded-full overflow-hidden">
                 <img
-                  className="md:w-14 md:h-14"
+                  className="md:w-12 md:h-12"
                   src={user.photoURL}
                   alt="Profile"
                   title={user.displayName}
