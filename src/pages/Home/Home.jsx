@@ -5,6 +5,7 @@ import Subscribe from "./subscribe/Subscribe";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
+import Newarival from "./Newarrival/Newarival";
 
 const Home = () => {
   useEffect(() => {
@@ -37,6 +38,13 @@ const Home = () => {
       </p>
       <div data-aos="fade-up">
         <Category></Category>
+      </div>
+      <div data-aos="fade-up">
+        <p className="md:text-5xl mb-2 p-2 bg-zinc-50 underline decoration-wavy decoration-cyan-300 text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
+          New Arrivals
+        </p>
+
+        <Newarival></Newarival>
       </div>
       {/* subscribe  */}
       <div data-aos="fade-up">
