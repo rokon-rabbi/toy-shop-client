@@ -1,12 +1,19 @@
 import { useState } from "react";
-
+import Swal from "sweetalert2";
 const Subscribe = () => {
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
       e.preventDefault();
+      
       // Handle form submission logic, e.g., sending the email to a server
-      console.log('Email:', email);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `${email} Successfully Subscribed!`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
       setEmail('');
     };
     return (

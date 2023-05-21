@@ -32,12 +32,12 @@ const router = createBrowserRouter([
       loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys/${params.id}`)
     
     },
-      { path: "/addtoy", element: <Addtoy/>  },
+      { path: "/addtoy", element: <PrivateRoute><Addtoy/></PrivateRoute>  },
       { path: "/view-details/:id", element: <PrivateRoute><Details/></PrivateRoute>,
       loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys/${params.id}`) 
       
     },
-    { path: "/mytoy", element: <Mytoy/>  }
+    { path: "/mytoy", element: <PrivateRoute><Mytoy/></PrivateRoute>  }
       
     ],
   },
