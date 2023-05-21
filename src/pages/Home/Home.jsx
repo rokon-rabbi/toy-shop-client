@@ -27,7 +27,7 @@ const Home = () => {
       </div>
       {/* gallery  */}
       <div data-aos="fade-up">
-        <p className="md:text-6xl p-2 bg-zinc-50  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
+        <p className="md:text-5xl  p-2 bg-zinc-50  text-3xl font-extrabold text-gray-900 text-center mt-6 md:mt-12">
           Gallery
         </p>
         <Gallery></Gallery>

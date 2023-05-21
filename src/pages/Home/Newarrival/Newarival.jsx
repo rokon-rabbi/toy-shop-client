@@ -153,7 +153,7 @@ const Newarival = () => {
           <CardBody className="px-1 py-4">
             <div className="flex items-center justify-between mb-2">
               <Typography color="blue-gray" className="  font-bold ">
-                {"Mi"}
+                {"Disney Baby"}
               </Typography>
               <Typography
                 color="blue-gray"

@@ -160,7 +160,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className=" left-80 ml-2  text-slate-600  hover:text-sky-600  relative md:w-100 w-auto bottom-6 font-medium text-xs md:text-lg   p-1 "
+                  className=" left-80 ml-2   text-slate-600  hover:text-sky-600  relative md:w-100 w-auto bottom-6 font-bold text-xs md:text-lg   p-1 "
                 >
                   logout
                   <FaSignInAlt className="inline ml-1 font-bold" />
@@ -168,7 +168,7 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <Link to={"/login"} className="left-10  text-slate-600  hover:text-sky-600  border-sky-500 px-auto hover:bg-white py-auto border-2 rounded-full  ml-auto relative md:w-100 w-20 bottom-6 font-medium text-sm md:md:text-lg   p-1" >
+            <Link to={"/login"} className="left-10  text-slate-600  hover:text-sky-600  border-sky-500 px-auto hover:bg-white py-auto border-2 rounded-full  ml-auto relative md:w-100 w-20 bottom-6 font-bold text-sm md:md:text-lg   p-1" >
              
                 <FaSignInAlt className="inline mr-1 font-bold" />
                 login
