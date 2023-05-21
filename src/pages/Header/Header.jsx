@@ -52,7 +52,7 @@ const Header = () => {
           />
         </Link>
         <ul
-          className={`bg-white md:bg-cyan-50 shadow-2xl md:shadow-none md:mr-72 md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-md  absolute  md:bg-none text-slate-950 duration-300 ${
+          className={`bg-white md:bg-cyan-50 shadow-2xl md:shadow-none  md:border-none border z-10  rounded-r-md px-6 py-4 md:space-x-10 md:flex md:static md:text-md  absolute  md:bg-none text-slate-950 duration-300 ${
             !icon ? "left-0 p-2 mt-2" : "-left-40 "
           } `}
         >
@@ -94,6 +94,16 @@ const Header = () => {
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Add a Toy
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/mytoy"
+              aria-label="mytoy"
+              title="MyToy"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              My Toy
             </NavLink>
           </li>
         </ul>

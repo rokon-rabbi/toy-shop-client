@@ -10,6 +10,7 @@ import ErrorPage from "../../pages/Errorpage/Errorpage";
 import Addtoy from "../../pages/AddToys/Addtoy";
 import Details from "../../pages/Details/Details";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import Mytoy from "../../pages/MyToys/Mytoy";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys/${params.id}`) 
       
     },
+    { path: "/mytoy", element: <Mytoy/>  }
       
     ],
   },
