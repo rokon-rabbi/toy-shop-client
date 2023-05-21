@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-
+import Swal from "sweetalert2";
 const Mytoy = () => {
 
     const { user } = useContext(AuthContext);
@@ -24,7 +24,29 @@ useEffect(() => {
     
       };
 
-
+      const handleDelete = id => {
+        const proceed = confirm('Are You sure you want to delete');
+        if (proceed) {
+            fetch(`https://toy-marketplace.vercel.app/DisneyToys/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Toy Added Successfully!",
+                            showConfirmButton: false,
+                            timer: 1500,
+                          });
+                        const remaining = toys.filter(booking => booking._id !== id);
+                        setToys(remaining);
+                    }
+                })
+        }
+    }
 
     return (
         <div className="bg-gray-100 min-h-screen ">
@@ -49,10 +71,19 @@ useEffect(() => {
                   Price
                 </th>
                 <th className="md:py-3 md:px-4 md:text-left text-center">
+                  Ratings
+                </th>
+                <th className="md:py-3 md:px-4 md:text-left text-center">
+                  Description
+                </th>
+                <th className="md:py-3 md:px-4 md:text-left text-center">
                   Available Quantity
                 </th>
                 <th className="md:py-3 md:px-4 md:text-left text-center">
-                  Details
+                  Update
+                </th>
+                <th className="md:py-3 md:px-4 md:text-left text-center">
+                  Delete
                 </th>
               </tr>
             </thead>
@@ -68,6 +99,8 @@ useEffect(() => {
                     {toy.subCategory}
                   </td>
                   <td className="md:py-3  md:px-4">{toy.price}$</td>
+                  <td className="md:py-3 text-center ">{toy.rating}</td>
+                  <td className="md:py-3 text-center md:px-4">{toy.description}</td>
                   <td className="md:py-3 text-center md:px-4">{toy.quantity}</td>
                   <td className="md:py-3  md:px-4">
                     <Link to={`/view-details/${toy._id}`}>
@@ -75,9 +108,19 @@ useEffect(() => {
                         onClick={() => handleUpdate()}
                         className={`flex bg-white rounded border md:p-2 p-1  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none `}
                       >
-                        Details
+                        Update
                       </button>
                     </Link>
+                  </td>
+                  <td className="md:py-3  md:px-4">
+                    
+                      <button
+                        onClick={() => handleDelete(toy._id)}
+                        className={`flex bg-white rounded border md:p-2 p-1  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none `}
+                      >
+                        Delete
+                      </button>
+                   
                   </td>
                 </tr>
               ))}
