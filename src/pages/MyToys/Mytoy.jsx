@@ -20,9 +20,7 @@ useEffect(() => {
          // eslint-disable-next-line react-hooks/exhaustive-deps
     } } ,[user])
 
-    const handleUpdate = () => {
-    
-      };
+   
 
       const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
@@ -36,8 +34,8 @@ useEffect(() => {
                     if (data.deletedCount > 0) {
                         Swal.fire({
                             position: "center",
-                            icon: "success",
-                            title: "Toy Added Successfully!",
+                            icon: "warning",
+                            title: "Toy Deleted Successfully!",
                             showConfirmButton: false,
                             timer: 1500,
                           });

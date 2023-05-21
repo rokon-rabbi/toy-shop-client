@@ -134,7 +134,7 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="sellerEmail"
-                 
+                 defaultValue={user&&user.email}
                   
                 />
               </div>
@@ -176,6 +176,7 @@ const Addtoy = () => {
                 <input
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
+                  step="0.01" 
                   id="rating"
                
                   

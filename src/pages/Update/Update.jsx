@@ -1,10 +1,11 @@
 
-import { Navigate, useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const Update = () => {
     const toys = new useLoaderData();
+    const navigate = useNavigate();
     const { _id, pictureURL, name, subCategory, sellerName, price, description, sellerEmail, rating, quantity } = toys;
-
+console.log(toys)
     const handleSubmit = e => {
         e.preventDefault();
       
@@ -34,28 +35,28 @@ const Update = () => {
         console.log(updateToy);
     
         fetch(`https://toy-marketplace.vercel.app/DisneyToys/${_id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updateToy),
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateToy)
         })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-            form.reset();
-            if (data.modifiedCount > 0) {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Toy Updated Successfully!',
-                    showConfirmButton: false,
-                    timer: 1500
-                }).then(() => {
-                    Navigate("/mytoy"); // Navigate to "my-toys" page
-                });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                form.reset();
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Toy Updated Successfully!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        navigate("/mytoy"); // Navigate to "my-toys" page
+                    });
+                }
+            })
       };
     return (
         <div className=" bg-sky-200 relative">
@@ -162,6 +163,7 @@ const Update = () => {
                   <input
                     className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="number"
+                    step="0.01"
                     id="rating"
                  
                     defaultValue={rating}

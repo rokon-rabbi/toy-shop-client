@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       { path: "/login", element: <Loginpage/> },
       { path: "/register", element: <Registerpage/>},
       { path: "/update/:id", element: <Update/>,
-      loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys${params.id}`)
+      loader: ({params}) => fetch(`https://toy-marketplace.vercel.app/DisneyToys/${params.id}`)
     
     },
       { path: "/addtoy", element: <Addtoy/>  },
