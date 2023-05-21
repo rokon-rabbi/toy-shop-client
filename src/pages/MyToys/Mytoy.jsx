@@ -3,20 +3,44 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 const Mytoy = () => {
+
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+
+  const [selectedOption, setSelectedOption] = useState('asc');
+  
+  const handleSortChange = (event) => {
+    const value = event.target.value;
+   
+    if(value=="highToLow"){
+      setSelectedOption('desc');
+      
+
+    }
+    else{
+      setSelectedOption('asc');
+      
+    }
+    // Perform sorting logic here based on the selected option
+  };
+
+
   useEffect(() => {
     document.title = "Toytopia | Mytoy"; // Update the title for the Home route
   }, []);
+
+
+
   useEffect(() => {
     if (user) {
-      const url = `https://toy-marketplace.vercel.app/DisneyToys?sellerEmail=${user.email}`;
+      const url = `https://toy-marketplace.vercel.app/DisneyToys?sellerEmail=${user.email}&sort=${selectedOption}`;
       fetch(url)
         .then(res => res.json())
         .then(data => setToys(data));
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }
-  }, [user]);
+  }, [user,selectedOption]);
+    
 
   const handleDelete = id => {
     const proceed = confirm("Are You sure you want to delete");
@@ -48,6 +72,29 @@ const Mytoy = () => {
         <p className="md:text-5xl mb-5 bg-zinc-50 p-2  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
           My Toys
         </p>
+        <div className="relative inline-block">
+      <select
+        value={selectedOption}
+        onChange={handleSortChange}
+        className="block font-bold text-black appearance-none bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option className="font-bold text-black" value="default">Sort by Price</option>
+        <option  className="font-bold text-black" value="lowToHigh">Low to High</option>
+        <option className="font-bold text-black" value="highToLow">High to Low</option>
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+        <svg
+          className="fill-current h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 12l-4-4h8l-4 4z"
+          />
+        </svg>
+      </div>
+    </div>
+  );
         <table className="w-full table-auto shadow-2xl">
           <thead className="">
             <tr className="text-xs   font-bold  text-gray-900 border md:uppercase md:tracking-wide">

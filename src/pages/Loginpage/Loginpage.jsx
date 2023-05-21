@@ -53,7 +53,7 @@ const Loginpage = () => {
       ></div>
       <div className="flex relative flex-col p-6 items-center justify-center h-full ">
         <div className="bg-white  rounded  px-8 mt-5 mb-5 shadow-2xl pt-8">
-          <div className="mb-4">
+          <div className="mb-4 text-black font-semibold">
             <p className="text-3xl text-slate-600 font-bold text-center underline pb-8">
               Login
             </p>
