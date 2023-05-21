@@ -49,7 +49,7 @@ const Category = () => {
     }
   };
   return (
-    <div className="p-20 mx-auto mb-5 mt-5">
+    <div className="md:p-20 mx-auto mb-5 mt-5">
       <p className="md:text-5xl mb-5 text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
         Products By Category
       </p>
@@ -124,7 +124,7 @@ const Category = () => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <div className="grid grid-cols-3 gap-10 px-10">
+                  <div className="grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 px-10">
                     {toys.map(toy => (
                       <Card key={toy._id} className="w-auto ">
                         <CardHeader
@@ -181,7 +181,7 @@ const Category = () => {
                   </div>
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <div className="grid grid-cols-3 gap-10 px-10">
+                  <div className="grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 px-10">
                     {toys.map(toy => (
                       <Card key={toy._id} className="w-auto ">
                         <CardHeader
@@ -238,11 +238,11 @@ const Category = () => {
                   </div>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <div className="grid grid-cols-3 gap-10 px-10">
+                  <div className="grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 px-10">
                     {toys.map(toy => (
                       <Card
                         key={toy._id}
-                        className="w-auto  shadow-xl border-slate-50 border-2"
+                        className="w-auto    shadow-xl border-slate-50 border-2"
                       >
                         <CardHeader
                           shadow={false}
