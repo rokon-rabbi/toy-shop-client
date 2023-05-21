@@ -50,7 +50,7 @@ const Mytoy = () => {
         </p>
         <table className="w-full table-auto shadow-2xl">
           <thead className="">
-            <tr className="text-xs   md:font-semibold font-thin text-gray-500 border md:uppercase md:tracking-wide">
+            <tr className="text-xs   font-bold  text-gray-900 border md:uppercase md:tracking-wide">
               <th className="md:py-3  md:px-4 md:text-left text-center">
                 Seller
               </th>
@@ -80,7 +80,7 @@ const Mytoy = () => {
               </th>
             </tr>
           </thead>
-          <tbody className=" md:text-sm text-xs md:font-normal text-gray-500">
+          <tbody className=" md:text-sm text-xs font-bold text-gray-500">
             {toys.map((toy, idx) => (
               <tr key={idx}>
                 <td className="md:py-3 text-center px-1  md:px-4">

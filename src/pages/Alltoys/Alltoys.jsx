@@ -49,7 +49,7 @@ const Alltoys = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen ">
+    <div className="bg-gray-100 min-h-screen  ">
       <div className="bg-white rounded-lg shadow  overflow-x-auto md:px-20 py-6 px-2 md:py-10">
         {/* search  */}
         <div className="max-w-sm mb-10 mx-auto">
@@ -72,10 +72,10 @@ const Alltoys = () => {
         <p className="md:text-5xl mb-5 bg-zinc-50 p-2  text-3xl font-extrabold text-gray-900 text-center mt-14 md:mt-12">
           All Toys
         </p>
-        <table className="w-full table-auto shadow-2xl">
+        <table className="w-full table-auto   shadow-2xl">
           <thead className="">
-            <tr className="text-xs   md:font-semibold font-thin text-gray-500 border md:uppercase md:tracking-wide">
-              <th className="md:py-3  md:px-4 md:text-left text-center">
+            <tr className="text-xs   font-extrabold  text-gray-900 border md:uppercase md:tracking-wide">
+              <th className="md:py-3   md:px-4 md:text-left text-center">
                 Seller
               </th>
               <th className="md:py-3 md:px-4 md:text-left text-center">
@@ -95,7 +95,7 @@ const Alltoys = () => {
               </th>
             </tr>
           </thead>
-          <tbody className=" md:text-sm text-xs md:font-normal text-gray-500">
+          <tbody className=" md:text-sm text-xs font-bold text-gray-500">
             {toys.map((toy, idx) => (
               <tr key={idx}>
                 <td className="md:py-3 text-center px-1  md:px-4">

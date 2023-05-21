@@ -31,7 +31,7 @@ const Home = () => {
         </p>
         <Gallery></Gallery>
       </div>
-      <p className="md:text-xl  text-md  text-gray-900 text-center  ">
+      <p className="md:text-xl  text-md font-semibold  text-gray-900 text-center  ">
         We’ve picked few pieces we’re pretty sure you’ll love. <br />
         Check back often and enjoy.
       </p>
