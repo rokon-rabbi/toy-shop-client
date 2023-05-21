@@ -103,9 +103,8 @@ useEffect(() => {
                   <td className="md:py-3 text-center md:px-4">{toy.description}</td>
                   <td className="md:py-3 text-center md:px-4">{toy.quantity}</td>
                   <td className="md:py-3  md:px-4">
-                    <Link to={`/view-details/${toy._id}`}>
+                    <Link to={`/update/${toy._id}`}>
                       <button
-                        onClick={() => handleUpdate()}
                         className={`flex bg-white rounded border md:p-2 p-1  hover:bg-red-500 hover:text-white  items-center text-red-600 focus:outline-none `}
                       >
                         Update
