@@ -10,4 +10,4 @@ Markup :  # This is a assignment project of programming hero and done by Md. Rok
 
 - This web site use Tailwind.css for customize the design and many other node package manager.
 
-- live-site-link:- 
+- live-site-link:- https://stalwart-entremet-21bdb0.netlify.app/
