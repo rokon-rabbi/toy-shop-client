@@ -240,7 +240,10 @@ const Category = () => {
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <div className="grid grid-cols-3 gap-10 px-10">
                     {toys.map(toy => (
-                      <Card key={toy._id} className="w-auto  shadow-xl border-slate-50 border-2">
+                      <Card
+                        key={toy._id}
+                        className="w-auto  shadow-xl border-slate-50 border-2"
+                      >
                         <CardHeader
                           shadow={false}
                           floated={false}

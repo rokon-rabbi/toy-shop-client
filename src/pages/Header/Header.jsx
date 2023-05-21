@@ -86,26 +86,33 @@ const Header = () => {
               Blog
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/addtoy"
-              aria-label="Addtoy"
-              title="Addtoy"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              Add a Toy
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/mytoy"
-              aria-label="mytoy"
-              title="MyToy"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              My Toy
-            </NavLink>
-          </li>
+          {
+            user &&(
+            <>
+            <li>
+              <NavLink
+                to="/addtoy"
+                aria-label="Addtoy"
+                title="Addtoy"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Add a Toy
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/mytoy"
+                aria-label="mytoy"
+                title="MyToy"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                My Toy
+              </NavLink>
+            </li>
+            </>
+            )
+          }
+          
         </ul>
 
         {/* <p>{user.displayName}</p> */}
