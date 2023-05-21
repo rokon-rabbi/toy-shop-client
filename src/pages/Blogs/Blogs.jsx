@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const Blogs = () => {
+    useEffect(() => {
+        document.title = "Toytopia | Blog"; // Update the title for the Home route
+      }, []);
   return (
     <div className="wrapper  text-gray-800 md:px-10">
       <h2 className="text-2xl  font-bold m-10 bg-amber-300 w-fit mx-auto rounded-md text-center">

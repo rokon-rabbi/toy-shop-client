@@ -5,7 +5,9 @@ import Swal from "sweetalert2";
 const Mytoy = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-
+  useEffect(() => {
+    document.title = "Toytopia | Mytoy"; // Update the title for the Home route
+  }, []);
   useEffect(() => {
     if (user) {
       const url = `https://toy-marketplace.vercel.app/DisneyToys?sellerEmail=${user.email}`;

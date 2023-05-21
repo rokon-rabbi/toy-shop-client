@@ -1,10 +1,12 @@
 // import { useState } from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 const Addtoy = () => {
   const { user } = useContext(AuthContext);
-
+  useEffect(() => {
+    document.title = "Toytopia | Addtoy"; // Update the title for the Home route
+  }, []);
   const handleSubmit = e => {
     e.preventDefault();
     // Perform form submission or further processing here
@@ -21,17 +23,16 @@ const Addtoy = () => {
     //   quantity,
     //   description,
     // });
-     const form = e.target;
-        const name = form.name.value;
-        const sellerName = form.sellerName.value;
-        const pictureURL = form.pictureURL.value;
-        const sellerEmail = form.sellerEmail.value;
-        const subCategory = form.subCategory.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const quantity = form.quantity.value;
-        const description = form.description.value;
-
+    const form = e.target;
+    const name = form.name.value;
+    const sellerName = form.sellerName.value;
+    const pictureURL = form.pictureURL.value;
+    const sellerEmail = form.sellerEmail.value;
+    const subCategory = form.subCategory.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
 
     const newToy = {
       pictureURL,
@@ -65,9 +66,8 @@ const Addtoy = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-        }
-        else{
-          alert("Not inserted")
+        } else {
+          alert("Not inserted");
         }
       });
   };
@@ -96,8 +96,6 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="pictureURL"
-                 
-              
                   required
                 />
               </div>
@@ -109,8 +107,6 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
-                  
-                 
                   required
                 />
               </div>
@@ -122,8 +118,6 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="sellerName"
-                
-                 
                 />
               </div>
               <div className="mb-4">
@@ -134,8 +128,7 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="sellerEmail"
-                 defaultValue={user&&user.email}
-                  
+                  defaultValue={user && user.email}
                 />
               </div>
               <div className="mb-4">
@@ -145,8 +138,6 @@ const Addtoy = () => {
                 <select
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="subCategory"
-                 
-                 
                   required
                 >
                   <option value="Animation Characters">
@@ -164,8 +155,6 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="price"
-                
-                 
                   required
                 />
               </div>
@@ -176,10 +165,8 @@ const Addtoy = () => {
                 <input
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
-                  step="0.01" 
+                  step="0.01"
                   id="rating"
-               
-                  
                   required
                 />
               </div>
@@ -191,8 +178,6 @@ const Addtoy = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="quantity"
-                 
-                  
                   required
                 />
               </div>
@@ -203,7 +188,6 @@ const Addtoy = () => {
                 <textarea
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="description"
-                
                   required
                 ></textarea>
               </div>

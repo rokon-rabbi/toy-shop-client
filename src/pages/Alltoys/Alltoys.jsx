@@ -12,7 +12,9 @@ const Alltoys = () => {
     filterToys();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
-
+  useEffect(() => {
+    document.title = "Toytopia | Alltoys"; // Update the title for the Home route
+  }, []);
   const filterToys = () => {
     if (!searchQuery) {
       setToys(allToys);
