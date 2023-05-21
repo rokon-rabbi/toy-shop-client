@@ -57,13 +57,13 @@ const Loginpage = () => {
             <p className="text-3xl text-slate-600 font-bold text-center underline pb-8">
               Login
             </p>
-            <form onSubmit={handleLogin}>
+            <form className="text-black" onSubmit={handleLogin}>
               <div className="mb-4">
                 <label className="block text-gray-700 font-bold mb-2">
                   Email
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
                   type="email"
                   placeholder="Enter your email"
@@ -74,7 +74,7 @@ const Loginpage = () => {
                   Password
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="password"
                   type="password"
                   placeholder="Enter your password"

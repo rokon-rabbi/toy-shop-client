@@ -87,13 +87,13 @@ const Addtoy = () => {
             <h1 className="text-3xl text-slate-600 font-bold text-center underline pb-8">
               Add Toy
             </h1>
-            <form onSubmit={handleSubmit}>
+            <form className="text-black" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block mb-2 font-bold" htmlFor="pictureURL">
                   Picture URL of the toy
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white appearance-none font-bold border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="pictureURL"
                   required
@@ -104,7 +104,7 @@ const Addtoy = () => {
                   Name
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white appearance-none font-bold border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
                   required
@@ -115,17 +115,17 @@ const Addtoy = () => {
                   Seller Name
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white appearance-none font-bold border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="sellerName"
                 />
               </div>
               <div className="mb-4">
-                <label className="block mb-2 font-bold" htmlFor="sellerEmail">
+                <label className="block mb-2  font-bold" htmlFor="sellerEmail">
                   Seller Email
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="sellerEmail"
                   defaultValue={user && user.email}
@@ -136,7 +136,7 @@ const Addtoy = () => {
                   Sub-category
                 </label>
                 <select
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="subCategory"
                   required
                 >
@@ -152,7 +152,7 @@ const Addtoy = () => {
                   Price
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="price"
                   required
@@ -163,7 +163,7 @@ const Addtoy = () => {
                   Rating
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   step="0.01"
                   id="rating"
@@ -175,7 +175,7 @@ const Addtoy = () => {
                   Available Quantity
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="quantity"
                   required
@@ -186,7 +186,7 @@ const Addtoy = () => {
                   Detail Description
                 </label>
                 <textarea
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="description"
                   required
                 ></textarea>

@@ -41,13 +41,13 @@ const Registerpage = () => {
       ></div>
       <div className="bg-white relative rounded  px-8 mt-5 mb-5 shadow-2xl pt-8 w-80 md:w-96">
         <p className="text-3xl font-bold text-slate-700 text-center underline m-4">Register</p>
-        <form onSubmit={handleRegister}>
+        <form className="text-black" onSubmit={handleRegister}>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" >
               Name
             </label>
             <input
-              className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
               placeholder="Enter your name"
@@ -59,7 +59,7 @@ const Registerpage = () => {
               Email
             </label>
             <input
-              className="shadow  bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow  font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
               placeholder="Enter your email"
@@ -72,7 +72,7 @@ const Registerpage = () => {
             </label>
             <input
               required
-              className="shadow  bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow font-bold  bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
               placeholder="Enter your password"
@@ -85,7 +85,7 @@ const Registerpage = () => {
             </label>
             <input
             required
-              className="shadow  bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow font-bold  bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="photo"
               type="text"
               placeholder="Enter the URL of your photo"

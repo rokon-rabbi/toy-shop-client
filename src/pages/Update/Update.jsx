@@ -44,7 +44,7 @@ const Update = () => {
     console.log(updateToy);
 
     fetch(`https://toy-marketplace.vercel.app/DisneyToys/${_id}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -82,13 +82,13 @@ const Update = () => {
             <h1 className="text-3xl text-slate-600 font-bold text-center underline pb-8">
               Add Toy
             </h1>
-            <form onSubmit={handleSubmit}>
+            <form className="text-black" onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block mb-2 font-bold" htmlFor="pictureURL">
                   Picture URL of the toy
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="pictureURL"
                   defaultValue={pictureURL}
@@ -100,7 +100,7 @@ const Update = () => {
                   Name
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="name"
                   defaultValue={name}
@@ -112,7 +112,7 @@ const Update = () => {
                   Seller Name
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="text"
                   id="sellerName"
                   defaultValue={sellerName}
@@ -123,7 +123,7 @@ const Update = () => {
                   Seller Email
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="email"
                   id="sellerEmail"
                   defaultValue={sellerEmail}
@@ -134,7 +134,7 @@ const Update = () => {
                   Sub-category
                 </label>
                 <select
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="subCategory"
                   defaultValue={subCategory}
                   required
@@ -151,7 +151,7 @@ const Update = () => {
                   Price
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="price"
                   defaultValue={price}
@@ -163,7 +163,7 @@ const Update = () => {
                   Rating
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   step="0.01"
                   id="rating"
@@ -176,7 +176,7 @@ const Update = () => {
                   Available Quantity
                 </label>
                 <input
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow font-bold bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   type="number"
                   id="quantity"
                   defaultValue={quantity}
@@ -188,7 +188,7 @@ const Update = () => {
                   Detail Description
                 </label>
                 <textarea
-                  className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow bg-white font-bold appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="description"
                   defaultValue={description}
                   required
